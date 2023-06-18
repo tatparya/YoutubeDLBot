@@ -160,6 +160,9 @@ def downloadLibPlaylists():
     downloadPlaylist("House - Tech House",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfft_s3L4yHTxr-C2C3lIsGw")
     # Lib House Tech house
+    downloadPlaylist("House - Afro Latin Tech House",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAff0mkh3q5CTIOc4pGJb8Y7G")
+    # Lib House Tech house
     downloadPlaylist("House - Tech House - Remix Mash",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAffnbf2B5fCaitsACFBrW3uC")
 
@@ -169,6 +172,18 @@ def downloadLibPlaylists():
     # Lib House - Bass House
     downloadPlaylist("House - Bass House - Remix Mash",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAffXAwUrRpj_ZA_bXDOtdO9J")
+
+    # Lib House - Future House
+    downloadPlaylist("Alnab - Future House",
+                     "https://www.youtube.com/playlist?list=PL7kDOF7v0GUZlFJMKGZ9wMWmDKkP62dZz")
+
+    # Lib House - Future House
+    downloadPlaylist("Alnab - Bass House New",
+                     "https://youtube.com/playlist?list=PL7kDOF7v0GUaMC9lIm-ch383jax8HpijQ")
+
+    # Lib House - Future House
+    downloadPlaylist("Alnab - Bass House 2",
+                     "https://youtube.com/playlist?list=PL7kDOF7v0GUahv14W-2xGEns9Rl-1LlIB")
 
     # Lib House - Progressive House
     # downloadPlaylist("House - Progressive House",
@@ -307,8 +322,8 @@ def downloadLibPlaylists():
 
 if __name__ == '__main__':
 
-    downloadLibPlaylists()
-    # downloadSong("https://www.youtube.com/watch?v=NQ4EE_hUaz0&ab_channel=Shavo-Topic")
+    # downloadLibPlaylists()
+    downloadSong("https://www.youtube.com/watch?v=yiMtAmH0_vU&ab_channel=6LACKVEVO")
     # downloadSong("https://www.youtube.com/watch?v=8nKZrsFIy3s&ab_channel=DropUnited")
     # downloadSong("https://www.youtube.com/watch?v=unfzfe8f9NI&ab_channel=AbbaVEVO")
     # downloadSong("https://www.youtube.com/watch?v=oNJZGYrEWhA&list=RDQM0prkTnexBJg&index=12&ab_channel=Acappella")
