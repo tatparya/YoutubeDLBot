@@ -33,6 +33,8 @@ def my_hook(d):
 externalDrive = '/Users/tatparyashankar/Desktop/'
 # externalDrive = '/Volumes/TatMusicLib/Other Lib/'
 externalDriveYT = '/Volumes/TatMusicLib/Youtube Lib/'
+externalDriveVJ = '/Volumes/TatMusicLib/VJ Loops/'
+
 ydl_opts = {
     # 'verbose': True,
     # 'format': format_string,
@@ -82,21 +84,19 @@ ydl_playlist_opts = {
 ydl_video_opts = {
     'verbose': True,
     # 'format': format_string,
-    'format': 'bestaudio/best',
-    'outtmpl': externalDriveYT + '%(title)s.%(ext)s',
+    'format': 'bestvideo/best',
+    'outtmpl': externalDriveVJ + '%(title)s.%(ext)s',
     # 'outtmpl': externalDriveYT + '%(title)s.%(ext)s',
 
-    'download_archive': externalDriveYT + 'download_archive',
+    'download_archive': externalDriveVJ + 'download_archive',
     # 'outtmpl': outtmpl,
     'default_search': 'ytsearch',
     # 'noplaylist': True,
     # 'no_color': False,
     'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'wav',
-            'preferredquality': '192',
+            'key': 'FFmpegVideoConvertor',
+            'preferedformat': 'mp4',
         },
-        {'key': 'FFmpegMetadata'}
     ],
     'logger': MyLogger(),
     'progress_hooks': [my_hook],
@@ -139,6 +139,14 @@ def downloadPlaylist(name, url):
 def downloadSong(url):
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         ydl.extract_info(url)
+
+def downloadVJLoops():
+    with youtube_dl.YoutubeDL(ydl_video_opts) as ydl:
+        ydl.extract_info("https://youtube.com/playlist?list=PLMEi2ySjhqKOjmUDQt8bI9o1KQf4uDfjR")
+
+def downloadVisualVideos():
+    with youtube_dl.YoutubeDL(ydl_video_opts) as ydl:
+        ydl.extract_info("https://youtube.com/playlist?list=PLMEi2ySjhqKOjmUDQt8bI9o1KQf4uDfjR")
 
 def downloadLibPlaylists():
 
@@ -191,6 +199,14 @@ def downloadLibPlaylists():
     # Lib Techno
     downloadPlaylist("House - Techno",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfdWfM2gtkqPDfYc31mUeabZ")
+    # Lib Techno
+    downloadPlaylist("House - Mnimal Deep Techno",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfeVV1xLUe09i6dHtdGlb3DL")
+    # Lib Underground Techno
+    downloadPlaylist("House - Underground Techno",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfcZ_UWoGteM9egrWDL-varc")
+
+
     # Lib House - G House
     downloadPlaylist("House - G House",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAff_ce5x58PK2N6SKLi13wHs")
@@ -291,6 +307,12 @@ def downloadLibPlaylists():
     '''
 
     # # Desi
+    downloadPlaylist("To mix general",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfe5FN5Eh_S66Zme3d4nj51-")
+    # # Desi
+    downloadPlaylist("Indo To Mix",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfdjX0LCoOUSoq5AeDj75kIo")
+    # # Desi
     downloadPlaylist("Desi",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfeC9FJLMinhjBzgQwD3GSks")
     # # Desi
@@ -319,11 +341,15 @@ def downloadLibPlaylists():
     # Mixing Vibey
     downloadPlaylist("Mixing Vibey",
                      "https://music.youtube.com/playlist?list=PL7kDOF7v0GUYflI1bDY1fTBrj2_0ITTp4")
+    # Arushi
+    downloadPlaylist("Arushi Indo Set",
+                     "https://youtube.com/playlist?list=PLcD_O4UUlLX8vkWnGo47xRYLQIDLrCcIt&si=N6GWse3Io0WXKkLf")
 
 if __name__ == '__main__':
 
-    # downloadLibPlaylists()
-    downloadSong("https://www.youtube.com/watch?v=yiMtAmH0_vU&ab_channel=6LACKVEVO")
+    downloadLibPlaylists()
+    # downloadVJLoops()
+    # downloadSong("https://www.youtube.com/watch?v=yiMtAmH0_vU&ab_channel=6LACKVEVO")
     # downloadSong("https://www.youtube.com/watch?v=8nKZrsFIy3s&ab_channel=DropUnited")
     # downloadSong("https://www.youtube.com/watch?v=unfzfe8f9NI&ab_channel=AbbaVEVO")
     # downloadSong("https://www.youtube.com/watch?v=oNJZGYrEWhA&list=RDQM0prkTnexBJg&index=12&ab_channel=Acappella")
