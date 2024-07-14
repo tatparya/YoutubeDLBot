@@ -37,6 +37,7 @@ externalDriveVJ = '/Volumes/TatMusicLib/VJ Loops/'
 
 ydl_opts = {
     # 'verbose': True,
+    'ffmpeg_location': '/usr/local/opt/ffmpeg@4/bin/ffmpeg',
     # 'format': format_string,
     'format': 'bestaudio/best',
     'outtmpl': externalDrive + '%(title)s.%(ext)s',
@@ -60,6 +61,7 @@ ydl_opts = {
 
 ydl_playlist_opts = {
     'verbose': True,
+    'ffmpeg_location': '/usr/local/opt/ffmpeg@4/bin/ffmpeg',
     # 'format': format_string,
     'format': 'bestaudio/best',
     'outtmpl': externalDriveYT + '%(title)s.%(ext)s',
@@ -83,6 +85,7 @@ ydl_playlist_opts = {
 
 ydl_video_opts = {
     'verbose': True,
+    'ffmpeg_location': '/usr/local/opt/ffmpeg@4/bin/ffmpeg',
     # 'format': format_string,
     'format': 'bestvideo/best',
     'outtmpl': externalDriveVJ + '%(title)s.%(ext)s',
@@ -220,6 +223,12 @@ def downloadLibPlaylists():
     # Lib minimal
     downloadPlaylist("House - Melodic Techno",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfe5UrJNKv1KlaVboqShecWx")
+    # Lib minimal
+    downloadPlaylist("House - Melodic Techno - Minimal Groovy",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfenWe8aOAkQp-cu1KlvfQrf")
+    # Lib minimal
+    downloadPlaylist("House - Melodic Techno - Afters",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfdRAnzFClWLsadzzyS5lNhV")
 
     # Lib Qilla
     downloadPlaylist("House - Qilla",
@@ -238,6 +247,12 @@ def downloadLibPlaylists():
     # Lib indo house
     downloadPlaylist("House - Indo Warehouse",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfcpCJeoBIS9QCl3IVjnW_VG")
+    # Lib indo house
+    downloadPlaylist("House - Indo House",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAffMjq4U5IQilNxa_xnZjevs")
+    # Lib indo bass
+    downloadPlaylist("House - Indo Bass",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAffmT54t9kBY_RJd3v7bfwns")
     # # Lib Organic
     downloadPlaylist("House - Organic House",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAffn9jslU7R5NHc6CAAQwyz6")
@@ -294,7 +309,8 @@ def downloadLibPlaylists():
 
     # Lib Hip hop
     downloadPlaylist("Hip Hop",
-                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfdMn_rWnn_btnCSaQOSOrmi")
+                     "https://www.youtube.com/playlist?list"
+                     "=PLjDKD6CQUAfdMn_rWnn_btnCSaQOSOrmi")
     # # Trap
     downloadPlaylist("Trap",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfeUScKEFB8eTG4YWJm3wIia")
@@ -309,6 +325,9 @@ def downloadLibPlaylists():
     # # Desi
     downloadPlaylist("To mix general",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfe5FN5Eh_S66Zme3d4nj51-")
+    # # Desi
+    downloadPlaylist("Techno Mix",
+                     "https://www.youtube.com/playlist?list=PLjDKD6CQUAfesnw5qw2Eo0eLBLLTzkRLb")
     # # Desi
     downloadPlaylist("Indo To Mix",
                      "https://www.youtube.com/playlist?list=PLjDKD6CQUAfdjX0LCoOUSoq5AeDj75kIo")
